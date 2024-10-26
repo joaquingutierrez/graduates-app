@@ -17,11 +17,11 @@
         }
 
         protected function close() {
-            return mysqli_close($this->getConexion());
+            return mysqli_close($this->getConnection());
         }
 
         public function executeQuery($q) {
-            return mysqli_query($this -> getConexion(), $q);
+            return mysqli_query($this -> getConnection(), $q);
         }
 
         public function createAssociativeArray($r) {
