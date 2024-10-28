@@ -3,9 +3,11 @@
 
     class CAdministrator {
         private $db;
+        private $graduates;
 
         public function __construct ($db) {
             $this -> db = $db;
+            $this -> graduates = new CGraduates($db);
         }
 
         public function createDegree ($degreeName) {
@@ -63,16 +65,31 @@
             }
         }
 
-        public function confirmGraduate () {
-
+        public function confirmGraduate ($graduate_id) {
+            return $this -> graduates -> editGraduate($graduate_id, "status", "confirmed");
         }
 
-        public function rejectGraduate () {
-
+        public function rejectGraduate ($graduate_id) {
+            return $this -> graduates -> editGraduate($graduate_id, "status", "rejected");
         }
         
         public function getConfirmedGraduates () {
+            $sql_filter = "status = 'confirmed'";
+            return $this -> graduates -> getfilteredGraduates($sql_filter);
+        }
 
+        public function getRejectedGraduates () {
+            $sql_filter = "status = 'rejected'";
+            return $this -> graduates -> getfilteredGraduates($sql_filter);
+        }
+
+        public function getPendingGraduates () {
+            $sql_filter = "status = 'pending'";
+            return $this -> graduates -> getfilteredGraduates($sql_filter);
+        }
+
+        public function getGraduates () {
+            return $this -> graduates -> getGraduates();
         }
 
         public function changePassword () {
