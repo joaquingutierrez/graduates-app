@@ -1,5 +1,5 @@
 <?php
-    require_once("abstract/CDataBase.php");
+    require_once(__DIR__ . "/abstract/CDataBase.php");
 
     class CMySQLi extends CDataBase {
         public function __construct ($h, $u, $p, $b) {
