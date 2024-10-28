@@ -92,8 +92,9 @@
             return $this -> graduates -> getGraduates();
         }
 
-        public function changePassword () {
-
+        public function changePassword ($id, $newPassword) {
+            $sql = "UPDATE admin_users SET password = '".$newPassword."' WHERE id = ".$id;
+            $this -> db -> executeQuery($sql);
         }
     }
 ?>

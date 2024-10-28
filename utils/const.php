@@ -1,4 +1,6 @@
 <?php
-    define("ADMIN_USER", "admin@admin.com")
-    define("ADMIN_PASSWORD", "Admin_123")
+    define("HOST", "localhost");
+    define("USER", "root");
+    define("PASSWORD", "");
+    define("DB", "app_egresados_db");
 ?>
