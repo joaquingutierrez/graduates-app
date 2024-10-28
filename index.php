@@ -15,7 +15,7 @@
     ?>
     <header>
         <h1>Graduados App</h1>
-        <button>Iniciar Sesión</button>
+        <a href="views/admin_session.php"><button>Iniciar Sesión</button></a>
     </header>
     <main>
         <h2>Ingreso del Graduado</h2>

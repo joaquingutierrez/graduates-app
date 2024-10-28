@@ -10,6 +10,16 @@
             $this -> graduates = new CGraduates($db);
         }
 
+        public function checkCredentials ($user_name, $password) {
+            $sql = "SELECT * FROM admin_users WHERE user_name = '". $user_name ."'";
+            $result = $this -> db -> executeQuery($sql);
+            if ($this -> db -> getRowCount($result) === 1) {
+                $user = $this -> db -> createAssociativeArray($result);
+                return $user["password"] === $password;
+            }
+            return false;
+        }
+
         public function createDegree ($degreeName) {
             if (!isValidDegreeName($degreeName)) {
                 echo "<p>Nombre inválido</p>";
