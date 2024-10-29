@@ -20,13 +20,18 @@
             return false;
         }
 
+        public function getDegrees () {
+            $sql = "SELECT * FROM degrees";
+            return $this -> db -> executeQuery($sql);
+        }
+
         public function createDegree ($degreeName) {
             if (!isValidDegreeName($degreeName)) {
                 echo "<p>Nombre inválido</p>";
                 return;
             }
             $sql = "INSERT INTO degrees (name) VALUES ('".$degreeName."')";
-            $this -> db -> executeQuery($sql);
+            return $this -> db -> executeQuery($sql);
         }
 
         public function editDegree ($id, $newName) {
@@ -35,12 +40,12 @@
                 return;
             }
             $sql = "UPDATE degrees SET name = '".$newName."' WHERE id = '".$id."'";
-            $this -> db -> executeQuery($sql);
+            return $this -> db -> executeQuery($sql);
         }
 
         public function deleteDegree ($id) {
             $sql = "DELETE FROM degrees WHERE id = '".$id."'";
-            $this -> db -> executeQuery($sql);
+            return $this -> db -> executeQuery($sql);
         }
 
         public function createEmail ($email) {
@@ -63,7 +68,7 @@
 
         public function deleteEmail ($id) {
             $sql = "DELETE FROM emails WHERE id = '".$id."'";
-            $this -> db -> executeQuery($sql);
+            return $this -> db -> executeQuery($sql);
         }
 
         public function sendEmails () {
