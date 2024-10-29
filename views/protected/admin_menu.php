@@ -16,10 +16,10 @@
 
         $url = "/tallerdelenguajes/TP-Integrador/views/protected";
         echo "<ul>";
-        echo "<li><a href='".$url."/degrees.php'>Ir a Carreras</a></li>";
-        echo "<li><a href='".$url."/emails.php'>Ir a Correos</a></li>";
-        echo "<li><a href='".$url."/graduates.php'>Ir a Egresados</a></li>";
-        echo "<li><a href='".$url."/profile.php'>Ir a Mi perfil</a></li>";
+        echo "<li><a href='".$url."/degrees'>Ir a Carreras</a></li>";
+        echo "<li><a href='".$url."/emails'>Ir a Correos</a></li>";
+        echo "<li><a href='".$url."/graduates'>Ir a Egresados</a></li>";
+        echo "<li><a href='".$url."/profile'>Ir a Mi perfil</a></li>";
         echo "</ul>";
     ?>
 </body>

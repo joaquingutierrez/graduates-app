@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi perfil</title>
+    <title>Correos</title>
 </head>
 <body>
     <?php
         session_start();
         if (!isset($_SESSION["credentials"]) || !$_SESSION["credentials"]) {
+            echo "<p>Usuario NO Autorizado</p>";
             exit;
         }
     ?>
-    <h1>Mi perfil</h1>
+    <h1>Correos Menu</h1>
     <ul>
-        <li>Cambiar mi contraseña</li>
+        <li>Alta</li>
+        <li>Baja</li>
+        <li>Modificacion</li>
     </ul>
 </body>
 </html>

@@ -9,6 +9,7 @@
     <?php
         session_start();
         if (!isset($_SESSION["credentials"]) || !$_SESSION["credentials"]) {
+            echo "<p>Usuario NO Autorizado</p>";
             exit;
         }
     ?>
