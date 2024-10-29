@@ -11,7 +11,12 @@
         }
         $result = $admin -> checkCredentials($user_name, $password);
         if ($result) {
+            session_start();
+
+            $url = "tallerdelenguajes/TP-Integrador/views/protected/admin_menu.php";
             echo "<p>¡Acceso autorizado!</p>";
+            $_SESSION['credentials'] = true;
+            echo "<a href= '/". $url ."'><button>Ir al Menu</button></a>";
             return;
         }
         echo "<p>Usuario o contraseña incorrectos.</p>";
