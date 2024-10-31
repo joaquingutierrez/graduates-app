@@ -15,9 +15,11 @@
             $result = $this -> db -> executeQuery($sql);
             if ($this -> db -> getRowCount($result) === 1) {
                 $user = $this -> db -> createAssociativeArray($result);
-                return $user["password"] === $password;
+                if ($user["password"] === $password) {
+                    return $user["id"];
+                }
             }
-            return false;
+            return 0;
         }
 
         public function getDegrees () {
@@ -114,7 +116,7 @@
 
         public function changePassword ($id, $newPassword) {
             $sql = "UPDATE admin_users SET password = '".$newPassword."' WHERE id = ".$id;
-            $this -> db -> executeQuery($sql);
+            return $this -> db -> executeQuery($sql);
         }
     }
 ?>

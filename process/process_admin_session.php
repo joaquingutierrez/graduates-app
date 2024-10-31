@@ -16,6 +16,7 @@
             $url = "tallerdelenguajes/TP-Integrador/views/protected/admin_menu.php";
             echo "<p>¡Acceso autorizado!</p>";
             $_SESSION['credentials'] = true;
+            $_SESSION['user_id'] = true;
             echo "<a href= '/". $url ."'><button>Ir al Menu</button></a>";
             return;
         }

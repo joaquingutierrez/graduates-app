@@ -15,7 +15,7 @@
     ?>
     <h1>Mi perfil</h1>
     <ul>
-        <li>Cambiar mi contraseña</li>
+        <li><a href="change_password.php">Cambiar mi contraseña</a></li>
     </ul>
 </body>
 </html>
