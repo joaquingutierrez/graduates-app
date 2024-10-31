@@ -1,6 +1,6 @@
 const menu_options = document.getElementById("menu-options");
-const selectElement = document.getElementById("select-degree-id");
-const render_edit_degree = document.getElementById("render-edit-degree");
+const selectElement = document.getElementById("select-email-id");
+const render_edit_email = document.getElementById("render-edit-email");
 
 const renderCreate = () => {
     const render_create = document.getElementById("render-create");
@@ -25,7 +25,7 @@ const noRenderCreate = () => {
 const noRenderUpdate = () => {
     const render_update = document.getElementById("render-update");
     render_update.style.display = "none";
-    render_edit_degree.style.display = "none";
+    render_edit_email.style.display = "none";
 }
 
 const noRenderDelete = () => {
@@ -64,10 +64,10 @@ Array.from(menu_options.children).map((item)=>{
 })
 
 selectElement.addEventListener("change", (e) => {
-    const degree_id = e.target.value;
-    if (degree_id) {
-        render_edit_degree.style.display = "block";
+    const email_id = e.target.value;
+    if (email_id) {
+        render_edit_email.style.display = "block";
     } else {
-        render_edit_degree.style.display = "none";
+        render_edit_email.style.display = "none";
     }
 })

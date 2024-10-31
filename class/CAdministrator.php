@@ -48,13 +48,18 @@
             return $this -> db -> executeQuery($sql);
         }
 
+        public function getEmails () {
+            $sql = "SELECT * FROM emails";
+            return $this -> db -> executeQuery($sql);
+        }
+
         public function createEmail ($email) {
             if (!isValidEmail($email)) {
                 echo "<p>Email inválido</p>";
                 return;
             }
             $sql = "INSERT INTO emails (email) VALUES ('".$email."')";
-            $this -> db -> executeQuery($sql);
+            return $this -> db -> executeQuery($sql);
         }
 
         public function editEmail ($id, $newEmail) {
@@ -63,7 +68,7 @@
                 return;
             }
             $sql = "UPDATE emails SET email = '".$newEmail."' WHERE id = '".$id."'";
-            $this -> db -> executeQuery($sql);
+            return $this -> db -> executeQuery($sql);
         }
 
         public function deleteEmail ($id) {
