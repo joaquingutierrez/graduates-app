@@ -15,10 +15,10 @@
     ?>
     <h1>Graduados Menu</h1>
     <ul>
-        <li>Ver lista de Graduados</li>
-        <li>Ver lista de Graduados: Pendientes</li>
-        <li>Ver lista de Graduados: Rechazados</li>
-        <li>Ver lista de Graduados: Confirmados</li>
+        <li><a href="graduates_list.php">Ver lista de Graduados</a></li>
+        <li><a href="pending_graduates_list.php">Ver lista de Graduados: Pendientes (Para confimar o rechazar)</a></li>
+        <li><a href="rejected_graduates_list.php">Ver lista de Graduados: Rechazados</a></li>
+        <li><a href="confirmed_graduates_list.php">Ver lista de Graduados: Confirmados</a></li>
     </ul>
 </body>
 </html>
