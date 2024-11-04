@@ -10,7 +10,21 @@
             $this -> graduates = new CGraduates($db);
         }
 
-        public function checkCredentials ($user_name, $password) {
+        public function checkCredentials ($user_name = "", $password = "") {
+            if (!$user_name || !$password) {
+                echo "<p>Por favor, llene todos los campos.</p>";
+                return;
+            }
+            if (
+                !isValidEmail($user_name) ||
+                !isValidPassword($password)
+            ) {
+                echo "<p>Datos introducidos erróneos. Por favor, intentelo de nuevo.</p>";
+                echo "<p>La contraseña debe tener al menos un caracter especial, al menos un número, sin espacios y debe tener un largo de al menos 8 caracteres.</p>";
+                echo '<p>Caracteres especiales: !@#$%^&*(),.?":{}|<>_</p>';
+                echo "<a href=".URL_BASE.">Volver</a>";
+                return;
+            }
             $sql = "SELECT * FROM admin_users WHERE user_name = '". $user_name ."'";
             $result = $this -> db -> executeQuery($sql);
             if ($this -> db -> getRowCount($result) === 1) {
@@ -115,6 +129,12 @@
         }
 
         public function changePassword ($id, $newPassword) {
+            if (!isValidPassword($newPassword)) {
+                echo "<p>Datos introducidos erróneos. Por favor, intentelo de nuevo.</p>";
+                echo "<p>La contraseña debe tener al menos un caracter especial, al menos un número, sin espacios y debe tener un largo de al menos 8 caracteres.</p>";
+                echo '<p>Caracteres especiales: !@#$%^&*(),.?":{}|<>_</p>';
+                return;
+            }
             $sql = "UPDATE admin_users SET password = '".$newPassword."' WHERE id = ".$id;
             return $this -> db -> executeQuery($sql);
         }

@@ -11,6 +11,17 @@
                 echo "<p>Por favor, complete todos los campos</p>";
                 return;
             }
+            if (
+                !isValidEmail($email) ||
+                !isValidFullName($full_name) ||
+                !isValidDegreeId($degree_id) ||
+                !isValidStudentNumber($student_number) ||
+                !isValidPhone($phone)
+            ) {
+                echo "<p>Datos introducidos erróneos. Por favor, intentelo de nuevo.</p>";
+                echo "<a href=".URL_BASE.">Volver</a>";
+                return;
+            }
             $sql = "INSERT INTO graduates (full_name, degree_id, student_number, email, phone) values (
                 '".$full_name."',
                 ".$degree_id.",

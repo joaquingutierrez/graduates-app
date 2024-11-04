@@ -10,8 +10,6 @@
         require_once(__DIR__ . "/utils/const.php");
         require_once(__DIR__ . "/class/CAdministrator.php");
         require_once(__DIR__ . "/class/CGraduates.php");
-
-        /* require_once("utils/testing.php") */
     ?>
     <header>
         <h1>Graduados App</h1>
@@ -38,7 +36,7 @@
             </div>
             <div>
                 <label for="phone">Teléfono</label>
-                <input type="text" name="phone" id="phone" placeholder="111 222 3333">
+                <input type="tel" name="phone" id="phone" placeholder="1234567890">
             </div>
             <input type="submit" value="Enviar">
         </form>
