@@ -92,12 +92,51 @@
             return $this -> db -> executeQuery($sql);
         }
 
-        public function sendEmails () {
+        public function sendEmails ($full_name, $degree_id, $student_number, $email, $phone) {
             $sql = "SELECT * FROM emails";
             $result = $this -> db -> executeQuery($sql);
+            $headers = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            $headers .= 'To: Mary <mary@example.com>, Kelly <kelly@example.com>' . "\r\n";
+            $headers .= 'From: Recordatorio <cumples@example.com>' . "\r\n";
+            $subject = "Registro de Egresado.";
+            $message = "
+            <html>
+                <head>
+                    <title>Se ha registrado un nuevo Egresado</title>
+                </head>
+                <body>
+                    <h1>Datos del Egresado</h1>
+                    <table>
+                        <tr>
+                            <th>Nombre y Apellido</th>
+                            <td>".$full_name."<td>
+                        </tr>
+                        <tr>
+                            <th>Carrera</th>
+                            <td>".$full_name."<td>
+                        </tr>
+                        <tr>
+                            <th>Nro. Matricula</th>
+                            <td>".$student_number."<td>
+                        </tr>
+                        <tr>
+                            <th>Correo</th>
+                            <td>".$email."<td>
+                        </tr>
+                        <tr>
+                            <th>Teléfono</th>
+                            <td>".$phone."<td>
+                        </tr>
+                    </table>
+                </body>
+            </html>
+            ";
+
             while ($row = $this -> db -> createAssociativeArray($result)) {
                 $email = $row["email"];
-                mail($email, "Subject", "Message");
+                mail($email, $subject, $message, $headers);
+
             }
         }
 

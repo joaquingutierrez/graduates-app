@@ -1,4 +1,5 @@
 <?php
+    require_once(__DIR__."/../../../utils/const.php");
     session_start();
     if (!isset($_SESSION["credentials"]) || !$_SESSION["credentials"]) {
         require_once("../../unauthorized.php");
@@ -15,7 +16,6 @@
 </head>
 <body>
     <?php
-        require_once(__DIR__."/../../../utils/const.php");
     ?>
     <h1>Carreras Menu</h1>
     <ul id="menu-options">
