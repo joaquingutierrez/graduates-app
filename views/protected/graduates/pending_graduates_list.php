@@ -1,3 +1,12 @@
+<?php
+    require_once(__DIR__."/../../../utils/const.php");
+    session_start();
+    if (!isset($_SESSION["credentials"]) || !$_SESSION["credentials"]) {
+        require_once("../../unauthorized.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +18,6 @@
     <h1>Lista de graduados</h1>
     <?php
         require_once(__DIR__."/../../../utils/functions.php");
-        require_once(__DIR__."/../../../utils/const.php");
         $graduates = $admin -> getPendingGraduates();
         $degrees = $admin -> getDegrees();
         renderGraduateTable($graduates, $degrees);

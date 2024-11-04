@@ -1,3 +1,12 @@
+<?php
+    require_once(__DIR__."/../../../utils/const.php");
+    session_start();
+    if (!isset($_SESSION["credentials"]) || !$_SESSION["credentials"]) {
+        require_once("../../unauthorized.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +15,6 @@
     <title>Mi perfil</title>
 </head>
 <body>
-    <?php
-        session_start();
-        if (!isset($_SESSION["credentials"]) || !$_SESSION["credentials"]) {
-            echo "<p>Usuario NO Autorizado</p>";
-            exit;
-        }
-    ?>
     <h1>Mi perfil</h1>
     <ul>
         <li><a href="change_password.php">Cambiar mi contraseña</a></li>

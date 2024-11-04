@@ -7,6 +7,7 @@
     define("USER", "root");
     define("PASSWORD", "");
     define("DB", "app_egresados_db");
+    define("URL_BASE", "/tallerdelenguajes/TP-Integrador/");
 
     $oBase = new CMySQLi(HOST, USER, PASSWORD, DB);
     $oGraduates = new CGraduates($oBase);

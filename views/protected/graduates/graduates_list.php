@@ -1,3 +1,12 @@
+<?php
+    require_once(__DIR__."/../../../utils/const.php");
+    session_start();
+    if (!isset($_SESSION["credentials"]) || !$_SESSION["credentials"]) {
+        require_once("../../unauthorized.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

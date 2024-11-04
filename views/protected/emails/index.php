@@ -1,3 +1,12 @@
+<?php
+    require_once(__DIR__."/../../../utils/const.php");
+    session_start();
+    if (!isset($_SESSION["credentials"]) || !$_SESSION["credentials"]) {
+        require_once("../../unauthorized.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +15,6 @@
     <title>Correos</title>
 </head>
 <body>
-    <?php
-        require_once(__DIR__."/../../../utils/const.php");
-        session_start();
-        if (!isset($_SESSION["credentials"]) || !$_SESSION["credentials"]) {
-            echo "<p>Usuario NO Autorizado</p>";
-            exit;
-        }
-    ?>
     <h1>Correos Menu</h1>
     <ul id="menu-options">
         <li data-value="create">Alta</li>
