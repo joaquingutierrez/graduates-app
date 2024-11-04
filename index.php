@@ -10,6 +10,7 @@
         require_once(__DIR__ . "/utils/const.php");
         require_once(__DIR__ . "/class/CAdministrator.php");
         require_once(__DIR__ . "/class/CGraduates.php");
+
     ?>
     <header>
         <h1>Graduados App</h1>
@@ -28,7 +29,15 @@
             </div>
             <div>
                 <label for="degree_id">Carrera</label>
-                <input type="text" name="degree_id" id="degree_id" placeholder="Nombre de la Carrera...">
+                <select name="degree_id" id="degree_id">
+                    <option value="">Seleccinar...</option>
+                    <?php
+                        $degrees = $admin -> getDegrees();
+                        foreach ($degrees as $degree) {
+                            echo "<option value='".$degree["id"]."'>".$degree["name"]."</option>";
+                        }
+                    ?>
+                </select>
             </div>
             <div>
                 <label for="email">Correo Electrónico</label>
