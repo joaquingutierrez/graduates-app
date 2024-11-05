@@ -16,7 +16,7 @@
 </head>
 <body>
     <h1>Cambio de contraseña</h1>
-    <form action="/tallerdelenguajes/TP-Integrador/process/process_profile/process_change_password.php" method="post" id="change-password-form">
+    <form action=<?php echo URL_BASE."process/process_profile/process_change_password.php"; ?> method="post" id="change-password-form">
         <div>
             <label for="password">Nueva contraseña</label>
             <input type="password" name="password" id="password">

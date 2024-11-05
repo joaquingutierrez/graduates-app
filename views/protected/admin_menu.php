@@ -8,13 +8,14 @@
 <body>
     <h1>Menu</h1>
     <?php
+        require_once("../../utils/const.php");
         session_start();
         if (!isset($_SESSION["credentials"]) || !$_SESSION["credentials"]) {
             echo "<p>Usuario NO Autorizado</p>";
             exit;
         }
 
-        $url = "/tallerdelenguajes/TP-Integrador/views/protected";
+        $url = URL_BASE."views/protected";
         echo "<ul>";
         echo "<li><a href='".$url."/degrees'>Ir a Carreras</a></li>";
         echo "<li><a href='".$url."/emails'>Ir a Correos</a></li>";

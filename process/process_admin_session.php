@@ -14,11 +14,11 @@
         if ($result) {
             session_start();
 
-            $url = "tallerdelenguajes/TP-Integrador/views/protected/admin_menu.php";
+            $url = URL_BASE."views/protected/admin_menu.php";
             echo "<p>¡Acceso autorizado!</p>";
             $_SESSION['credentials'] = true;
             $_SESSION['user_id'] = true;
-            echo "<a href= '/". $url ."'><button>Ir al Menu</button></a>";
+            echo "<a href= '". $url ."'><button>Ir al Menu</button></a>";
             return;
         }
         echo "<p>Usuario o contraseña incorrectos.</p>";

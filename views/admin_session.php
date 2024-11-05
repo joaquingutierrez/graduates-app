@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión</title>
-    <base href="/tallerdelenguajes/TP-Integrador/">
+    <base href=<?php require_once("../utils/const.php"); echo URL_BASE;?>>
 </head>
 <body>
     <h1>Inicio de Sesión del Administrador</h1>

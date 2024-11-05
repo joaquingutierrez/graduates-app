@@ -22,7 +22,7 @@
         <li data-value="update">Modificacion</li>
     </ul>
     <div id="render-create" style="display: none;">
-        <form action="/tallerdelenguajes/TP-Integrador/process/process_email/process_email_create.php" method="post">
+        <form action=<?php echo URL_BASE."process/process_email/process_email_create.php"; ?> method="post">
             <div>
                 <label for="email">Correo nuevo:</label>
                 <input type="email" name="email" id="email" placeholder="Introduzca el correo...">
@@ -32,7 +32,7 @@
     </div>
 
     <div id="render-update" style="display: none;">
-        <form action="/tallerdelenguajes/TP-Integrador/process/process_email/process_email_update.php" method="post">
+        <form action=<?php echo URL_BASE."process/process_email/process_email_update.php"; ?> method="post">
             <div>
                 <label for="select-email-id">Seleccionar Correo</label>
                 <select name="select-email-id" id="select-email-id">
@@ -54,7 +54,7 @@
     </div>
 
     <div id="render-delete" style="display: none;">
-        <form action="/tallerdelenguajes/TP-Integrador/process/process_email/process_email_delete.php" method="post">
+        <form action=<?php echo URL_BASE."process/process_email/process_email_delete.php"; ?> method="post">
         <label for="select-email-id-delete">Seleccionar Correo</label>
             <select name="select-email-id-delete" id="select-email-id-delete">
                 <option selected value="">Seleccionar...</option>

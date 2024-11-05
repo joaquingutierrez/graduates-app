@@ -25,7 +25,7 @@
     </ul>
 
     <div id="render-create" style="display: none;">
-        <form action="/tallerdelenguajes/TP-Integrador/process/process_degree_create.php" method="post">
+        <form action=<?php echo URL_BASE."process/process_degree_create.php"; ?> method="post">
             <div>
                 <label for="name">Nombre de la Carrera</label>
                 <input type="text" name="name" id="name" placeholder="Introduzca el nombre de la Carrera...">
@@ -35,7 +35,7 @@
     </div>
 
     <div id="render-update" style="display: none;">
-        <form action="/tallerdelenguajes/TP-Integrador/process/process_degree_update.php" method="post">
+        <form action=<?php echo URL_BASE."process/process_degree_update.php"; ?> method="post">
             <div>
                 <label for="select-degree-id">Seleccionar Carrera</label>
                 <select name="select-degree-id" id="select-degree-id">
@@ -57,7 +57,7 @@
     </div>
 
     <div id="render-delete" style="display: none;">
-        <form action="/tallerdelenguajes/TP-Integrador/process/process_degree_delete.php" method="post">
+        <form action=<?php echo URL_BASE."process/process_degree_delete.php"; ?> method="post">
         <label for="select-degree-id-delete">Seleccionar Carrera</label>
             <select name="select-degree-id-delete" id="select-degree-id-delete">
                 <option selected value="">Seleccionar...</option>

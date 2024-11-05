@@ -30,7 +30,7 @@
             <div>
                 <label for="degree_id">Carrera</label>
                 <select name="degree_id" id="degree_id">
-                    <option value="">Seleccinar...</option>
+                    <option value="0">Seleccinar...</option>
                     <?php
                         $degrees = $admin -> getDegrees();
                         foreach ($degrees as $degree) {

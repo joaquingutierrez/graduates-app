@@ -22,7 +22,7 @@
         $degrees = $admin -> getDegrees();
         renderGraduateTable($graduates, $degrees);
     ?>
-    <form action="/tallerdelenguajes/TP-Integrador/process/process_graduate/process_graduate.php" method="post">
+    <form action=<?php echo URL_BASE."process/process_graduate/process_graduate.php"; ?> method="post">
         <div>
             <label for="select-graduate-id">Seleccionar Egresado</label>
             <select name="select-graduate-id" id="select-graduate-id">

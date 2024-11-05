@@ -24,11 +24,11 @@
             }
             $sql = "INSERT INTO graduates (full_name, degree_id, student_number, email, phone) values (
                 '".$full_name."',
-                ".$degree_id.",
-                ".$student_number.",
+                '".$degree_id."',
+                '".$student_number."',
                 '".$email."',
                 '".$phone."'
-            )";
+                );";
             return $this -> db -> executeQuery($sql);
         }
 
