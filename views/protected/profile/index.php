@@ -15,6 +15,10 @@
     <title>Mi perfil</title>
 </head>
 <body>
+    <?php
+        $url = URL_BASE."views/protected/admin_menu.php";
+        echo "<a href= '". $url ."'><button>Ir al Menu</button></a>";
+    ?>
     <h1>Mi perfil</h1>
     <ul>
         <li><a href="change_password.php">Cambiar mi contraseña</a></li>

@@ -15,6 +15,10 @@
     <title>Correos</title>
 </head>
 <body>
+    <?php
+        $url = URL_BASE."views/protected/admin_menu.php";
+        echo "<a href= '". $url ."'><button>Ir al Menu</button></a>";
+    ?>
     <h1>Correos Menu</h1>
     <ul id="menu-options">
         <li data-value="create">Alta</li>

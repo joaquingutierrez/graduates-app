@@ -15,6 +15,10 @@
     <title>Cambiar contraseña</title>
 </head>
 <body>
+    <?php
+        $url = URL_BASE."views/protected/profile";
+        echo "<a href= '". $url ."'><button>Ir al Menu de Perfil</button></a>";
+    ?>
     <h1>Cambio de contraseña</h1>
     <form action=<?php echo URL_BASE."process/process_profile/process_change_password.php"; ?> method="post" id="change-password-form">
         <div>

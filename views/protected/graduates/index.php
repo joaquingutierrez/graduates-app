@@ -15,6 +15,10 @@
     <title>Graduados</title>
 </head>
 <body>
+    <?php
+        $url = URL_BASE."views/protected/admin_menu.php";
+        echo "<a href= '". $url ."'><button>Ir al Menu</button></a>";
+    ?>
     <h1>Graduados Menu</h1>
     <ul>
         <li><a href="graduates_list.php">Ver lista de Graduados</a></li>

@@ -15,6 +15,10 @@
     <title>Lista de Graduados</title>
 </head>
 <body>
+    <?php
+        $url = URL_BASE."views/protected/graduates";
+        echo "<a href= '". $url ."'><button>Ir al Menu de Graduados</button></a>";
+    ?>
     <h1>Lista de graduados</h1>
     <?php
         require_once(__DIR__."/../../../utils/functions.php");
