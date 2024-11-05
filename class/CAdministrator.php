@@ -29,7 +29,7 @@
             $result = $this -> db -> executeQuery($sql);
             if ($this -> db -> getRowCount($result) === 1) {
                 $user = $this -> db -> createAssociativeArray($result);
-                if ($user["password"] === $password) {
+                if (isSamePassword($password, $user["password"])) {
                     return $user["id"];
                 }
             }
@@ -168,12 +168,13 @@
         }
 
         public function changePassword ($id, $newPassword) {
-            if (!isValidPassword($newPassword)) {
+            if (!isValidPassword($newPassword) || !isValidDegreeId($id)) {
                 echo "<p>Datos introducidos erróneos. Por favor, intentelo de nuevo.</p>";
                 echo "<p>La contraseña debe tener al menos un caracter especial, al menos un número, sin espacios y debe tener un largo de al menos 8 caracteres.</p>";
                 echo '<p>Caracteres especiales: !@#$%^&*(),.?":{}|<>_</p>';
                 return;
             }
+            $newPassword = hashPassword($newPassword);
             $sql = "UPDATE admin_users SET password = '".$newPassword."' WHERE id = ".$id;
             return $this -> db -> executeQuery($sql);
         }

@@ -1,5 +1,6 @@
 <?php
     require_once(__DIR__ . "/../../utils/const.php");
+    require_once(__DIR__ . "/../../utils/functions.php");
     session_start();
     echo "
         <button id='go-back'>Volver atras</button>
